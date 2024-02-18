@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .form-group { margin-bottom: 20px; }
+        h2 { color: #333; }
+        .instructions { margin-bottom: 20px; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <h2>Login</h2>
+    <div class="instructions">Please enter your name, email, and password to log in. If you are not registered, you can do so by filling in your details and clicking the "Register" button.</div>
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+    </div>
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+    </div>
+    <button onclick="register()">Register</button>
+    <button onclick="login()">Login</button>
+
+    <script>
+        function register() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            localStorage.setItem('name', name); // Store name
+            localStorage.setItem('email', email); // Store email
+            window.location.href = 'index.html'; // Redirect to index.html
+        }
+
+        function login() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            localStorage.setItem('name', name); // Store name
+            localStorage.setItem('email', email); // Assuming login checks pass, store email
+            window.location.href = 'index.html'; // Redirect to index.html
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .header { margin-bottom: 20px; }
+        .header a { margin-right: 10px; }
+        .welcome { font-size: 32px; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="login.html">Login</a>
+        <a href="inventory.html">Inventory</a>
+        <a href="about.html">About</a>
+    </div>
+    <div id="greeting" class="welcome"></div>
+    <div>Can't keep track of all your things?</div>
+
+    <script>
+        window.onload = function() {
+            const name = localStorage.getItem('name');
+            const email = localStorage.getItem('email');
+            if (name && email) {
+                document.getElementById('greeting').innerHTML = `Hi ${name} - ${email}`;
+            } else {
+                document.getElementById('greeting').innerHTML = 'Hey You';
+            }
+        }
+    </script>
+</body>
+</html>
